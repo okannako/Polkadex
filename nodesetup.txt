@@ -71,7 +71,11 @@ sudo -s
 snap install jq
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 
-#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 76. kod, kullanıcı oluşturduysanız 77. satırdaki kodu kullanarak devam edin)
+#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 80. kod, kullanıcı oluşturduysanız 81. satırdaki kodu kullanarak devam edin)
+
+tmux ls
+tmux attach -t tmuxismi
+Ctrl+c
 
 $HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
 /home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
@@ -79,7 +83,6 @@ $HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes 
 #Sisteme eşitlenmesi için biraz bekleyin devam edin.
 
 NOT:Bu satırdan sonra tüm işlemler videoda bulunmaktadır.
-
 
 
 
