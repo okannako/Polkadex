@@ -1,3 +1,3 @@
-![pol](https://user-images.githubusercontent.com/73176377/132608817-f8e73850-d0ae-4c77-b292-e914805b1f26.jpg)
+![pol](https://user-images.githubusercontent.com/73176377/132608949-b5ac7a7e-d211-4e5f-9778-cf17e3383b5c.jpg)
 
 # Node Kurulum Adımları
