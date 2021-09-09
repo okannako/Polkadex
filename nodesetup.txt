@@ -5,7 +5,7 @@ sudo adduser kullaniciadiniz
 
 sudo visudo
 root    ALL=(ALL:ALL) ALL 
-kullaniciadiniz ALL=(ALL:ALL) ALL #root altına bu satırı ekle
+kullaniciadiniz ALL=(ALL:ALL) ALL
 CTRL+X Y Enter
 
 #Kullanıcıya Yetki Ver
