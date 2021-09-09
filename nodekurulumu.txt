@@ -1,8 +1,5 @@
-![pol](https://user-images.githubusercontent.com/73176377/132608949-b5ac7a7e-d211-4e5f-9778-cf17e3383b5c.jpg)
 
-# Node Kurulum Adımları
-
-#Kullanıcı Oluşturma
+#Kullanıcı Oluşturma (Ubuntu 20.04)
 
 sudo adduser kullaniciadiniz
 
@@ -11,7 +8,58 @@ root    ALL=(ALL:ALL) ALL
 kullaniciadiniz ALL=(ALL:ALL) ALL #root altına bu satırı ekle
 CTRL+X Y Enter
 
-#Kullanıcıya Yetki Ver/Authorize User
+#Kullanıcıya Yetki Ver
+
 sudo usermod -a -G sudo kullaniciadiniz
 
 sudo su - kullaniciadiniz
+
+#Gerekli Güncellemeler
+
+sudo apt-get update
+sudo apt install make clang pkg-config libssl-dev build-essential curl git
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+rustup toolchain add nightly-2021-05-11
+rustup target add wasm32-unknown-unknown --toolchain nightly-2021-05-11
+rustup target add x86_64-unknown-linux-gnu --toolchain nightly-2021-05-11
+
+rustc --version
+
+timedatectl
+sudo apt-get install ntp
+sudo ntpq -p
+
+#Polkadex Dosya Kurulumu
+
+git clone https://github.com/Polkadex-Substrate/Polkadex.git
+cd Polkadex
+cd $HOME
+curl -O -L https://github.com/Polkadex-Substrate/Polkadex/releases/download/v0.4.1-rc5/customSpecRaw.json
+
+#Node Başlatma (Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 42. kod, kullanıcı oluşturduysanız 43. satırdaki kodu kullanarak devam edin)
+
+$HOME/Polkadex/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --pruning=archive
+/home/kullaniciadiniz/Polkadex/target/release/polkadex-node --chain=/home/kullaniciadiniz/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --pruning=archive
+
+#Tweet Atarak Test Token Almak (Videoda gördüğünüz şekilde tweet atacaksınız onun koduda 47. satırda.)
+
+👋 Hey @polkadex I would like to try the new test net. Please give me some #PolkadexTestTokens to my account [YOUR_WALLET_ADDRESS]. Thanks for working hard!
+
+#Tokenlar geldikten sonra videodan devam edin.
+
+#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 53. kod, kullanıcı oluşturduysanız 54. satırdaki kodu kullanarak devam edin)
+
+$HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
+/home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
+
+#Sisteme Eşitlendikten Sonra Session Key Almak
+
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+
+NOT: 58. satırdan sonra tüm işlemler videoda bulunmaktadır.
+
+
+
+
+
