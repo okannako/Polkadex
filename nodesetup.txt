@@ -76,7 +76,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 $HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
 /home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
 
-#Sisteme eşitkenmesi için biraz bekleyin devam edin.
+#Sisteme eşitlenmesi için biraz bekleyin devam edin.
 
 NOT:Bu satırdan sonra tüm işlemler videoda bulunmaktadır.
 
