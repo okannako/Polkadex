@@ -55,7 +55,7 @@ Ctrl+b d
 
 #Videodan Devamını Yapın.
 
-#Tweet Atarak Test Token Almak (Videoda gördüğünüz şekilde tweet atacaksınız onun koduda 47. satırda.)
+#Tweet Atarak Test Token Almak (Videoda gördüğünüz şekilde tweet atacaksınız onun koduda 60. satırda.)
 
 👋 Hey @polkadex I would like to try the new test net. Please give me some #PolkadexTestTokens to my account [YOUR_WALLET_ADDRESS]. Thanks for working hard!
 
