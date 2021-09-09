@@ -4,7 +4,7 @@
 sudo adduser kullaniciadiniz
 
 sudo visudo
-root    ALL=(ALL:ALL) ALL 
+%admin ALL=(ALL:ALL) ALL 
 kullaniciadiniz ALL=(ALL:ALL) ALL
 CTRL+X Y Enter
 
