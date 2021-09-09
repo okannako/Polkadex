@@ -53,23 +53,45 @@ $HOME/Polkadex/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --b
 
 Ctrl+b d
 
+#Videodan Devamını Yapın.
+
 #Tweet Atarak Test Token Almak (Videoda gördüğünüz şekilde tweet atacaksınız onun koduda 47. satırda.)
 
 👋 Hey @polkadex I would like to try the new test net. Please give me some #PolkadexTestTokens to my account [YOUR_WALLET_ADDRESS]. Thanks for working hard!
 
 #Tokenlar geldikten sonra videodan devam edin.
 
-#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 64. kod, kullanıcı oluşturduysanız 65. satırdaki kodu kullanarak devam edin)
-
-$HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
-/home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
-
 #Sisteme Eşitlendikten Sonra Session Key Almak
+
+#Tmuxdan çıkıyoruz
+
+Ctrl+b d
+sudo -s
 
 snap install jq
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 
-NOT: 58. satırdan sonra tüm işlemler videoda bulunmaktadır.
+#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 76. kod, kullanıcı oluşturduysanız 77. satırdaki kodu kullanarak devam edin)
+
+$HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
+/home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
+
+#Sisteme eşitkenmesi için biraz bekleyin devam edin.
+
+NOT:Bu satırdan sonra tüm işlemler videoda bulunmaktadır.
+
+
+
+
+#Node Kontrol Etmek İçin Yapılacaklar (Kullanıcı oluşturmadıysanız 87'den, oluşturduysanız 84. ve 85. satırları yazıp devam edin.)
+
+sudo su kullaniciismi
+cd
+
+tmux ls
+tmux attach -t tmuxismi(tmux ls yazdığınızda çıkan satırda en başta yazan sayı veya sözcük ':' işretine kadar)
+
+
 
 
 
