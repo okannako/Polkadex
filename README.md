@@ -1,2 +1,3 @@
-![22](https://user-images.githubusercontent.com/73176377/132608446-c22e20f9-b7b0-452d-8e44-1f97f5df2f7f.jpeg)
+![pol](https://user-images.githubusercontent.com/73176377/132608817-f8e73850-d0ae-4c77-b292-e914805b1f26.jpg)
+
 # Node Kurulum Adımları
