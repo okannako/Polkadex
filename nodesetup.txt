@@ -16,7 +16,7 @@ sudo su - kullaniciadiniz
 
 #Gerekli Güncellemeler
 
-sudo apt-get update
+sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential curl git
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
@@ -34,13 +34,17 @@ sudo ntpq -p
 
 git clone https://github.com/Polkadex-Substrate/Polkadex.git
 cd Polkadex
+git checkout v0.4.1-rc5
+cargo build --release
+
 cd $HOME
 curl -O -L https://github.com/Polkadex-Substrate/Polkadex/releases/download/v0.4.1-rc5/customSpecRaw.json
 
-#Node Başlatma (Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 45. kod, kullanıcı oluşturduysanız 46. satırdaki kodu kullanarak devam edin)
+#Node Başlatma (Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 49. kod, kullanıcı oluşturduysanız 50. satırdaki kodu kullanarak devam edin)
 
 tmux
 sudo -s
+cd
 
 $HOME/Polkadex/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --pruning=archive
 /home/kullaniciadiniz/Polkadex/target/release/polkadex-node --chain=/home/kullaniciadiniz/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --pruning=archive
@@ -55,7 +59,7 @@ Ctrl+b d
 
 #Tokenlar geldikten sonra videodan devam edin.
 
-#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 53. kod, kullanıcı oluşturduysanız 54. satırdaki kodu kullanarak devam edin)
+#Validator Oluşturma (Videoda sırası gelince bu kodları kullanın.Eğer kullanıcı oluşturmadıysanız root ile yapıyorsanız 64. kod, kullanıcı oluşturduysanız 65. satırdaki kodu kullanarak devam edin)
 
 $HOME/target/release/polkadex-node --chain=$HOME/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
 /home/nako/Polkadex/target/release/polkadex-node --chain=/home/nako/customSpecRaw.json --bootnodes /ip4/13.235.190.203/tcp/30333/p2p/12D3KooWC7VKBTWDXXic5yRevk8WS8DrDHevvHYyXaUCswM18wKd --validator --name "Validator-Tutorial"
